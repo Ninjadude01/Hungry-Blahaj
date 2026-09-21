@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Hungry-Blahaj"
-run/main_scene="uid://b71q18keixdae"
+run/main_scene="uid://dnxjfae46vddl"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
 [display]

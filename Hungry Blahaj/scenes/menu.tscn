@@ -2,11 +2,45 @@
 
 [ext_resource type="Texture2D" uid="uid://bf6qgp1niuf3u" path="res://assets/blahaj.jpg" id="1_yqeox"]
 [ext_resource type="Script" uid="uid://cicji6gq3oafd" path="res://scenes/play.gd" id="2_con2f"]
+[ext_resource type="FontFile" uid="uid://dxsmpov11yd3r" path="res://assets/jpal.otf" id="2_mhnvy"]
 [ext_resource type="Script" uid="uid://w5a1bwtbi8h4" path="res://scenes/quit.gd" id="3_mhnvy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62e2m"]
 texture = ExtResource("1_yqeox")
 modulate_color = Color(0.5834499, 0.5834499, 0.5834498, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5krvv"]
+bg_color = Color(0.30685517, 0.60947716, 0.9591419, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ytvr"]
+bg_color = Color(0.12849298, 0.3737393, 0.5957622, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_top = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhnvy"]
+bg_color = Color(0.12849298, 0.3737393, 0.5957622, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_top = 10.0
 
 [node name="Control" type="Control" unique_id=465769910]
 layout_mode = 3
@@ -29,23 +63,79 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_62e2m")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1764370394]
+[node name="play" type="Button" parent="." unique_id=115141192]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.5
+offset_top = -16.5
+offset_right = 153.5
+offset_bottom = 68.5
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="play" type="Button" parent="VBoxContainer" unique_id=115141192]
-layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_mhnvy")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5krvv")
 text = "PLAY"
 script = ExtResource("2_con2f")
 
-[node name="quit" type="Button" parent="VBoxContainer" unique_id=1846274655]
-layout_mode = 2
+[node name="quit" type="Button" parent="." unique_id=1846274655]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.5
+offset_top = 133.0
+offset_right = 153.5
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_mhnvy")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5krvv")
 text = "QUIT"
 script = ExtResource("3_mhnvy")
 
-[connection signal="pressed" from="VBoxContainer/play" to="VBoxContainer/play" method="_on_pressed"]
-[connection signal="pressed" from="VBoxContainer/quit" to="VBoxContainer/quit" method="_on_pressed"]
+[node name="TextEdit" type="TextEdit" parent="." unique_id=1763355870]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -329.0
+offset_top = 121.0
+offset_right = 370.0
+offset_bottom = 231.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_mhnvy")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ytvr")
+text = " Hungry Blahaj "
+
+[node name="TextEdit2" type="TextEdit" parent="." unique_id=1664539676]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -254.0
+offset_top = -264.0
+offset_right = 268.5
+offset_bottom = -148.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_mhnvy")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_mhnvy")
+text = " Who is sleep deprived 
+  and needs monster"
+
+[connection signal="pressed" from="play" to="play" method="_on_pressed"]
+[connection signal="pressed" from="quit" to="quit" method="_on_pressed"]
