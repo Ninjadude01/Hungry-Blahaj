@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dnxjfae46vddl"]
+
+[ext_resource type="Texture2D" uid="uid://bf6qgp1niuf3u" path="res://assets/blahaj.jpg" id="1_yqeox"]
+[ext_resource type="Script" uid="uid://cicji6gq3oafd" path="res://scenes/play.gd" id="2_con2f"]
+[ext_resource type="Script" uid="uid://w5a1bwtbi8h4" path="res://scenes/quit.gd" id="3_mhnvy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62e2m"]
+texture = ExtResource("1_yqeox")
+modulate_color = Color(0.5834499, 0.5834499, 0.5834498, 1)
+
+[node name="Control" type="Control" unique_id=465769910]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=67307591]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -6.0
+offset_right = 264.97717
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_62e2m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1764370394]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="play" type="Button" parent="VBoxContainer" unique_id=115141192]
+layout_mode = 2
+text = "PLAY"
+script = ExtResource("2_con2f")
+
+[node name="quit" type="Button" parent="VBoxContainer" unique_id=1846274655]
+layout_mode = 2
+text = "QUIT"
+script = ExtResource("3_mhnvy")
+
+[connection signal="pressed" from="VBoxContainer/play" to="VBoxContainer/play" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="VBoxContainer/quit" method="_on_pressed"]

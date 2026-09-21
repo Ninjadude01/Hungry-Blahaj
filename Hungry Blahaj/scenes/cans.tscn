@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://2bnfarqaxwt"]
+
+[ext_resource type="Texture2D" uid="uid://bylea4bidbxbr" path="res://assets/White Monster.png" id="1_l6fu4"]
+[ext_resource type="Texture2D" uid="uid://bjbsi3jsoik7y" path="res://assets/Green Monster.png" id="2_qsrdl"]
+[ext_resource type="Texture2D" uid="uid://clw3a4uq28ybw" path="res://assets/Blue Monster.png" id="3_cvrcl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud37r"]
+atlas = ExtResource("1_l6fu4")
+region = Rect2(0, 0, 260, 626)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptqot"]
+atlas = ExtResource("2_qsrdl")
+region = Rect2(0, 0, 276, 633)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp6id"]
+atlas = ExtResource("3_cvrcl")
+region = Rect2(0, 0, 352, 797)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nv7qf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud37r")
+}],
+"loop": 1,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptqot")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp6id")
+}],
+"loop": 1,
+"name": &"3",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r01ct"]
+size = Vector2(47, 124)
+
+[node name="monster" type="CharacterBody2D" unique_id=1573066302]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1333016784]
+position = Vector2(231.74998, 742.6519)
+scale = Vector2(0.20192324, 0.20192322)
+sprite_frames = SubResource("SpriteFrames_nv7qf")
+animation = &"1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1503587170]
+position = Vector2(234.5, 741)
+shape = SubResource("RectangleShape2D_r01ct")
